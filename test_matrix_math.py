@@ -199,6 +199,7 @@ def test_matrix_scalar_multiply():
     assert matrix_scalar_multiply(C, 3) == [[3, 6],
                                             [6, 3],
                                             [3, 6]]
+test_matrix_scalar_multiply()
 
 
 def test_matrix_vector_multiply():
@@ -213,6 +214,7 @@ def test_matrix_vector_multiply():
     assert matrix_vector_multiply(B, [1, 2, 3]) == [14, 32, 50]
     assert matrix_vector_multiply(C, [3, 4]) == [11, 10, 11]
     assert matrix_vector_multiply(D, [0, 1, 2]) == [8, 4]
+test_matrix_vector_multiply()
 
 
 @raises(ShapeException)
@@ -220,6 +222,7 @@ def test_matrix_vector_multiply_checks_shapes():
     """Shape Rule: The number of rows of the vector must equal the number of
     columns of the matrix."""
     matrix_vector_multiply(C, [1, 2, 3])
+test_matrix_vector_multiply_checks_shapes()
 
 
 def test_matrix_matrix_multiply():

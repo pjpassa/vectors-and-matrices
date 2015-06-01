@@ -57,12 +57,13 @@ def matrix_col(matrix, col_number):
     return [row[col_number] for row in matrix]
 
 
-def matrix_scalar_multiply():
-    pass
+def matrix_scalar_multiply(matrix, scalar):
+    return [[scalar * x for x in row] for row in matrix]
 
 
-def matrix_vector_multiply():
-    pass
+def matrix_vector_multiply(matrix, vector):
+    shape_check(matrix[0], vector)
+    return [dot(row, vector) for row in matrix]
 
 
 def matrix_matrix_multiply():
