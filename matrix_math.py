@@ -1,4 +1,5 @@
 from itertools import zip_longest
+from functools import reduce
 import math
 
 
@@ -17,6 +18,7 @@ def shape(matrix):
 def shape_check(input1, input2):
     if shape(input1) != shape(input2):
         raise(ShapeException)
+    return input1
 
 
 def dot(vector1, vector2):
@@ -41,12 +43,13 @@ def vector_sub(vector1, vector2):
     return vector_add(vector1, vector_multiply(vector2, -1))
 
 
-def vector_sum():
-    pass
+def vector_sum(*args):
+    reduce(shape_check, tuple(args))
+    return reduce(vector_add, tuple(args))
 
 
-def vector_mean():
-    pass
+def vector_mean(*args):
+    return vector_multiply(vector_sum(*args), 1/len(args))
 
 
 def matrix_row(matrix, row_number):
