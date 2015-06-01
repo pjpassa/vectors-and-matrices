@@ -49,12 +49,12 @@ def vector_mean():
     pass
 
 
-def matrix_row():
-    pass
+def matrix_row(matrix, row_number):
+    return matrix[row_number]
 
 
-def matrix_col():
-    pass
+def matrix_col(matrix, col_number):
+    return [row[col_number] for row in matrix]
 
 
 def matrix_scalar_multiply():

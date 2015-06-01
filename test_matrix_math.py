@@ -172,6 +172,7 @@ def test_matrix_row():
     assert matrix_row(A, 0) == [1, 0, 0]
     assert matrix_row(B, 1) == [4, 5, 6]
     assert matrix_row(C, 2) == [1, 2]
+test_matrix_row()
 
 
 def test_matrix_col():
@@ -185,6 +186,7 @@ def test_matrix_col():
     assert matrix_col(A, 0) == [1, 0, 0]
     assert matrix_col(B, 1) == [2, 5, 8]
     assert matrix_col(D, 2) == [3, 1]
+test_matrix_col()
 
 
 def test_matrix_scalar_multiply():
