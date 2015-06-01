@@ -37,16 +37,19 @@ def test_vector_add():
     assert vector_add(v, w) == [1, 5, 4]
     assert vector_add(u, y) == [11, 21, 31]
     assert vector_add(u, z) == u
+test_vector_add()
 
 
 def test_vector_add_is_communicative():
     assert vector_add(w, y) == vector_add(y, w)
+test_vector_add_is_communicative()
 
 
 @raises(ShapeException)
 def test_vector_add_checks_shapes():
     """Shape rule: the vectors must be the same size."""
     vector_add(m, v)
+test_vector_add_checks_shapes()
 
 
 def test_vector_sub():
@@ -59,12 +62,14 @@ def test_vector_sub():
     assert vector_sub(w, v) == [-1, -1, 4]
     assert vector_sub(y, z) == y
     assert vector_sub(w, u) == vector_sub(z, vector_sub(u, w))
+test_vector_sub()
 
 
 @raises(ShapeException)
 def test_vector_sub_checks_shapes():
     """Shape rule: the vectors must be the same size."""
     vector_sub(m, v)
+test_vector_sub_checks_shapes()
 
 
 def test_vector_sum():
@@ -105,6 +110,7 @@ def test_vector_multiply():
     """
     assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
     assert vector_multiply(m, 2) == [6, 8]
+test_vector_multiply()
 
 
 def test_vector_mean():

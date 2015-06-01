@@ -32,12 +32,13 @@ def vector_multiply(vector, scalar):
     return [scalar * x for x in vector]
 
 
-def vector_add():
-    pass
+def vector_add(vector1, vector2):
+    shape_check(vector1, vector2)
+    return [x + y for x, y in zip_longest(vector1, vector2)]
 
 
-def vector_sub():
-    pass
+def vector_sub(vector1, vector2):
+    return vector_add(vector1, vector_multiply(vector2, -1))
 
 
 def vector_sum():
