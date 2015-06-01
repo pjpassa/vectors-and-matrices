@@ -233,7 +233,7 @@ def test_matrix_matrix_multiply():
 
     Matrix * Matrix = Matrix
     """
-    assert matrix_matrix_multiply(A, B) == A
+    assert matrix_matrix_multiply(A, B) == B
     assert matrix_matrix_multiply(B, C) == [[8, 10],
                                             [20, 25],
                                             [32, 40]]
@@ -241,6 +241,7 @@ def test_matrix_matrix_multiply():
                                             [5, 6, 7],
                                             [7, 6, 5]]
     assert matrix_matrix_multiply(D, C) == [[8, 10], [8, 10]]
+test_matrix_matrix_multiply()
 
 
 @raises(ShapeException)
@@ -248,3 +249,4 @@ def test_matrix_matrix_multiply_checks_shapes():
     """Shape Rule: The number of columns of the first matrix must equal the
     number of rows of the second matrix."""
     matrix_matrix_multiply(A, D)
+test_matrix_matrix_multiply_checks_shapes()

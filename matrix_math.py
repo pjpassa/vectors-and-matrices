@@ -66,5 +66,7 @@ def matrix_vector_multiply(matrix, vector):
     return [dot(row, vector) for row in matrix]
 
 
-def matrix_matrix_multiply():
-    pass
+def matrix_matrix_multiply(matrix1, matrix2):
+    shape_check(matrix1[0], matrix_col(matrix2, 0))
+    return [[dot(row, matrix_col(matrix2, index))
+            for index in range(len(matrix2[0]))] for row in matrix1]
