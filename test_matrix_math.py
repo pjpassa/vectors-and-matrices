@@ -25,6 +25,7 @@ def test_shape_vectors():
     assert shape(m) == (2,)
     assert shape(v) == (3,)
     assert shape([1]) == (1,)
+test_shape_vectors()
 
 
 def test_vector_add():
@@ -86,12 +87,14 @@ def test_dot():
     assert dot(w, y) == 160
     assert dot(m, n) == 15
     assert dot(u, z) == 0
+test_dot()
 
 
 @raises(ShapeException)
 def test_dot_checks_shapes():
     """Shape rule: the vectors must be the same size."""
     dot(v, m)
+test_dot_checks_shapes()
 
 
 def test_vector_multiply():
@@ -127,7 +130,7 @@ def test_magnitude():
     assert magnitude(v) == math.sqrt(10)
     assert magnitude(y) == math.sqrt(1400)
     assert magnitude(z) == 0
-
+test_magnitude()
 
 A = [[1, 0, 0],
      [0, 1, 0],
@@ -149,6 +152,7 @@ def test_shape_matrices():
     assert shape(A) == (3, 3)
     assert shape(C) == (3, 2)
     assert shape(D) == (2, 3)
+test_shape_matrices()
 
 
 def test_matrix_row():
