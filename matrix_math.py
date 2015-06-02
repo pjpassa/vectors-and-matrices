@@ -7,12 +7,12 @@ class ShapeException(Exception):
     pass
 
 
-def shape(matrix):
+def shape(array):
     try:
-        row_length = len(matrix[0])
+        row_length = len(array[0])
     except TypeError:
-        return (len(matrix), )
-    return (len(matrix), row_length)
+        return (len(array), )
+    return (len(array), row_length)
 
 
 def shape_check(input1, input2):
@@ -70,6 +70,5 @@ def matrix_vector_multiply(matrix, vector):
 
 
 def matrix_matrix_multiply(matrix1, matrix2):
-    shape_check(matrix1[0], matrix_col(matrix2, 0))
     return [[dot(row, matrix_col(matrix2, index))
             for index in range(len(matrix2[0]))] for row in matrix1]
